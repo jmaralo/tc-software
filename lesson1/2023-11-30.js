@@ -1,11 +1,10 @@
-console.log("2023-11-30/leason1\n\nExercise1");
+// Training Center Lesson 1 -- 2023-11-30
 
 // Exercise 1
 // Hello World!
 console.log("Hello World");
 
 
-console.log("\nExercise 2");
 // Exercise 2
 // The types of variables
 
@@ -16,7 +15,8 @@ var c = true;
 var abc = [a, b, c];
 console.log(abc);
 
-console.log("\nExercise 3");
+
+// Exercise 3
 // let is a local variable (block scope)
 let d = 10;
 
@@ -30,7 +30,7 @@ const e = 10;
 // e = 5; // error, because e can't be changed
 console.log(e);
 
-console.log("\nExercise 4");
+
 // Exercise 4
 // The types of loops
 
@@ -46,7 +46,8 @@ while (i < 10) {
     i++;
 }
 
-console.log("\nExercise 5");
+
+
 // Exercise 5
 // Functions
 
@@ -61,7 +62,7 @@ const add2 = (a, b) => {
     return a + b;
 }
 
-console.log("\nExercise 6");
+
 // Exercise 6
 // Arrays
 
@@ -77,7 +78,8 @@ for (let b in array) {
     console.log(b); // this prints the index
 }
 
-console.log("\nBonus");
+
+// BONUS
 // tricks for this week's exercise:
 string = "Hello World";
 arrayOfStrings = string.split(" "); // split the string into an array of strings    
