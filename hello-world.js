@@ -1,1 +1,7 @@
-console.log("Hello, World!")
+const a = "Hello, world!"
+
+
+function calculator(a) {
+    
+}
+console.log(a.split(" "))
