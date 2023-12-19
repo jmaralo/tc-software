@@ -1,7 +1,14 @@
 const http = require("node:http")
 
-http.request("http://worldtimeapi.org/api/timezone/Europe/Madrid", {
-    method: "GET"
+const req = http.request("http://worldtimeapi.org/api/timezone/Europe/Madrid", {
 }, (res) => {
-    res.on("data", data => console.log(data))
+    res.on("data", (chunk) => {
+        console.log(chunk.toString())
+    })
 })
+
+req.on("error", (err) => {
+    console.error(err)
+})
+
+req.end()
