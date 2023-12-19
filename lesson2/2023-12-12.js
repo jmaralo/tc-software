@@ -101,7 +101,7 @@ reader.on("line", (line) => {
 
 
 // --- Exercise 6 ---
-// HTTP - WorldTimeAPI
+// HTTP - WorldTimeAPI (check lesson 3 for more info)
 
 const http = require("node:http");
 
