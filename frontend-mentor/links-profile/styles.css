@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+
+.container {
+    background-color: #444444;
+    border-radius: 20px;
+    margin: 100px;
+    padding: 100px;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-info {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-picture {
+    border-radius: 50%;
+}
+
+.ubication {
+    color: greenyellow;
+}
+
+.links {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    width: 80%;
+}
+
+.profile-link {
+    font-weight: bold;
+    background-color: #aaaaaa;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    height: 3rem;
+}
