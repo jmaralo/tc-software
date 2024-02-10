@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rating</title>
+    <style>
+      body {
+        background-color: black;
+      }
+
+      #rating {
+        background-color: darkslategrey;
+        border-radius: 30px;
+        display: flex;
+        flex-flow: column;
+        justify-content: left;
+        padding: 30px;
+        gap: 2rem;
+      }
+
+      .icon {
+        height: 3rem;
+        width: 3rem;
+        padding: 1rem;
+        background-color: grey;
+        border-radius: 50%;
+      }
+
+      h1,
+      p {
+        color: white;
+      }
+
+      #score {
+        display: flex;
+        flex-flow: row;
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .score-button {
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        padding: 1rem;
+      }
+
+      #submit {
+        height: 3rem;
+        background-color: orange;
+        color: white;
+        border-radius: 1.5rem;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      #result-score {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="rating-view">
+      <div id="rating">
+        <img src="star.png" class="icon" />
+        <h1>How did we do?</h1>
+        <p>
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <div id="score">
+          <button class="score-button">1</button>
+          <button class="score-button">2</button>
+          <button class="score-button">3</button>
+          <button class="score-button">4</button>
+          <button class="score-button">5</button>
+        </div>
+        <button id="submit">SUBMIT</button>
+      </div>
+    </div>
+
+    <div id="result-view" class="hidden">
+      <p id="result-score"></p>
+    </div>
+
+    <script>
+      const scoreButtons = document.getElementsByClassName("score-button");
+
+      let selectedScore = 0;
+
+      function getOnClick(score) {
+        return () => {
+          selectedScore = score;
+          console.log(selectedScore);
+        };
+      }
+
+      for (const button of scoreButtons) {
+        button.onclick = getOnClick(parseInt(button.innerHTML));
+      }
+
+      const ratingView = document.getElementById("rating-view");
+      const submitButton = document.getElementById("submit");
+      const resultView = document.getElementById("result-view");
+      const resultScore = document.getElementById("result-score");
+
+      function submitClick() {
+        ratingView.className = "hidden";
+        resultView.className = "";
+        resultScore.innerHTML = `You selected ${selectedScore} out of 5`;
+      }
+
+      submitButton.onclick = submitClick;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+  </head>
+  <body>
+    <button id="boton">Click to get date</button>
+    <div id="date"></div>
+
+    <script>
+        const boton = document.getElementById("boton");
+        const date = document.getElementById("date");
+  
+        boton.onclick = () => (date.innerHTML = new Date());
+      </script>
+  </body>
+</html>
