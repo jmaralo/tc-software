@@ -1,0 +1,59 @@
+/* The lesson starts at the HTML file, this is a comment in CSS btw */
+
+/* --- Exercise 4 --- */
+/* Creating styles */
+
+/* Changing the h1 h2 and paragraph style */
+h1, h2, p {
+    color: red;
+    font-size: 20px;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: line-through;
+    text-indent: 4px; /* you can use ex, %, cm... instead of px */
+}
+
+/* You can limit the width of the div editing its style */
+div {max-width: 300px;}
+
+/* Changing the style of a specific class of paragraph */
+p.center {
+    text-align: center;
+}
+
+/* Changing the background color of the body */
+body {
+    background-color: #f2f2f2;
+}
+
+/* Set a border style */
+p {
+    border: 1px dotted powderblue;
+
+    /* Set a mixed border */
+    border-style: dashed dotted solid double;
+
+    border-top-style: dotted;
+    border-right-style: solid;
+    border-bottom-style: dashed;
+    border-left-style: inherit;
+
+    /* Set the border to be rounded and give it a margin */
+    border-radius: 5%;
+    margin: 5px; /* you can set it to auto */
+
+    /* Padding is like margin but between the text and th border */
+    padding: 5px; /* you can set it to auto */
+}
+
+/* Or set it as an image and set it to not repeat and just make it attach to 
+follow the scroll*/
+body {
+    background-image: url("img_tree.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* --- This week's exercise --- */
+/* (Voluntary) - Use www.frontendmentor.io to practice */
