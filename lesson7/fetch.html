@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const request = fetch(
+        "http://worldtimeapi.org/api/timezone/Europe/Madrid"
+      );
+      request.then(async (response) => {
+        console.log("response:", response);
+        const bodyStream = response.body;
+        const decoder = new TextDecoder();
+        let content = "";
+        for await (chunk of bodyStream) {
+          content += decoder.decode(chunk);
+        }
+        console.log(content);
+
+        console.log(response.status);
+        console.log(response.statusText);
+      });
+    </script>
+  </body>
+</html>

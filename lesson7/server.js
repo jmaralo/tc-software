@@ -1,5 +1,6 @@
 const {WebSocketServer} = require("ws")
 
+console.log("server listening on port ", 8080)
 const wss = new WebSocketServer({port: 8080})
 
 wss.addListener("connection", (ws) => {
@@ -9,3 +10,4 @@ wss.addListener("connection", (ws) => {
     const interval = setInterval(() => ws.send("ping"), 1000)
     ws.on("close", () => clearInterval(interval))
 })
+

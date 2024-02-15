@@ -6,8 +6,6 @@
     <title>Document</title>
   </head>
   <body>
-    <p id="status">disconnected</p>
-    <p id="messages"></p>
     <script>
       const ws = new WebSocket("ws://localhost:8080");
 
@@ -17,9 +15,9 @@
         interval = setInterval(() => ws.send("hello!\n"), 1000);
       };
 
-      ws.onmessage = (msg) => console.log(msg);
+      ws.onmessage = (msg) => console.log(msg.data);
 
-      ws.onerror = () => console.error;
+      ws.onerror = console.error;
       ws.onclose = () => {
         clearInterval(interval);
         console.log("disconnected");
