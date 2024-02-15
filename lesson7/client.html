@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="status">disconnected</p>
+    <p id="messages"></p>
+    <script>
+      const ws = new WebSocket("ws://localhost:8080");
+
+      let interval = -1;
+      ws.onopen = () => {
+        console.log("connected");
+        interval = setInterval(() => ws.send("hello!\n"), 1000);
+      };
+
+      ws.onmessage = (msg) => console.log(msg);
+
+      ws.onerror = () => console.error;
+      ws.onclose = () => {
+        clearInterval(interval);
+        console.log("disconnected");
+      };
+    </script>
+  </body>
+</html>
